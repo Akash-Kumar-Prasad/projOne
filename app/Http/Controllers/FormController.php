@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Session;
 
@@ -8,7 +7,7 @@ use App\Models\UserModel;
 
 class FormController extends Controller
 {
-    function getdata(Request $req){
+    function savedata(Request $req){
         $name=$req->name;
         $email=$req->email;
 
@@ -18,6 +17,12 @@ class FormController extends Controller
 
         $tbl->save();
 
-        return redirect('userpage')->with('msg', 'Data successfully Inserted');
+        //return redirect('userpage')->with('msg', 'Data successfully Inserted');
+        return $this->fetchdata();
+    }
+
+    function fetchdata(){
+        $data=UserModel::all();
+        return view ('userform', ['records'=>$data]);
     }
 }

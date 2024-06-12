@@ -10,4 +10,4 @@ Route::get('/', function () {
 
 Route::view('userpage', 'userform');
 
-Route::post('processuserform', [FormController::class,'getdata']);
+Route::post('processuserform', [FormController::class,'savedata']);
