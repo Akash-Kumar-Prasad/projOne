@@ -3,18 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 //use App\Http\Controllers\FormController;
-use App\Http\Controllers\GradecardController;
+// use App\Http\Controllers\GradecardController;
+use App\Http\Controllers\ProcessFormController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::view('userpage', 'userform');
 
-// Route::post('processuserform', [FormController::class,'savedata']);
+Route::view('userform','epveri');
 
-//Grade card
-
-Route::view('gradepage', 'gradecard');
-
-Route::post('processgradecard',[GradecardController::class,'searchdata']);
+Route::post('processform',[ProcessFormController::class, 'search']);

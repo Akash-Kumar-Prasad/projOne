@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserModel extends Model
 {
-    public $table='tbl_user';
+    public $table='emailpassveri';
     public $timestamps=false;
 }
 //creted at & updated at are two things that laravel automatically intializes
