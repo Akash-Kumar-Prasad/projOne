@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Middleware;
+
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,7 +14,13 @@ class Entrance
      */
     public function handle(Request $request, Closure $next): Response
     {
-        echo "testing";
-        return $next($request);
+        $input = $request->num;
+
+        if ($input >= 100)
+            return $next($request);
+        else {
+            echo "Your request cannot be processed";
+            die;
+        }
     }
 }
